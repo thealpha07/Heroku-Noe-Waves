@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style >
+      @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  
+}
+
+
+.leftHalf {
+   background-repeat: no-repeat;
+   background-attachment: center;
+   background-size: cover;
+   width: 50%;
+   position: absolute;
+   left: 0px;
+   height: 100%;
+}
+.rightHalf {
+background-color:#dff3f9;
+   width: 50%;
+   position: absolute;
+   right: 0px;
+   height: 100%;
+}
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+}
+.login-box h1{
+  float: left;
+  font-size: 40px;
+  color: black;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 50px;
+  padding: 13px 0;
+}
+.addfile{
+  font-size: 20px;
+  color: black;
+  padding: 10px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #4caf50;
+}
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #4caf50;
+}
+.textbox i{
+  width: 26px;
+  float: left;
+  color: black;
+  text-align: center;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  color: black;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.btn{
+          padding: 13px 20px;
+            background-color: #00b300;
+            border-radius: 0;
+            font-size: 18px;
+            
+            border-radius: 30px;
+            color: #dff3f9;
+            margin-bottom: 14px;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+    
+  </head>
+  <body>
+    <script>
+
+    function validate() {
+
+      var x = document.forms["upload"]["file"].value;
+
+      if (x == "") {
+
+        alert("No File provided");
+
+        return false;
+
+      }
+
+    }
+
+
+
+  </script>
+  <div class="leftHalf"> 
+    <img src=/static/images/VG.jpg alt="login image">
+  </div>
+<form  action = "/sec" method = "POST" onsubmit= "return validate()" enctype = "multipart/form-data">
+<div class ="rightHalf">
+ <div class="login-box">
+  <h1>Welcome to Noe-Waves</h1>
+   <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" name='name' placeholder="Name">
+  </div>
+
+ 
+  <div class="textbox">
+    <i class="fas fa-envelope"></i>
+    <input type="email" name="email" placeholder="Email">
+  </div>
+  
+  <div class="textbox">
+    <i class="fas fa-phone"></i>
+    <input type="Phone" name="phone" placeholder="Phone">
+  </div>
+  <div class="addfile">
+   <div class="form-row justify-content-center mt-4 mb-4">
+       <input type="file" id="myFile" name="file">
+   </div>
+   </div>
+            <button class="btn btn-block login-btn" type="submit" >
+              Procceed
+            </button>
+
+</div>
+</div>
+
+
+</form>
+
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<script >function bs_input_file() {
+  $(".input-file").before(
+    function() {
+      if ( ! $(this).prev().hasClass('input-ghost') ) {
+        var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+        element.attr("name",$(this).attr("name"));
+        element.change(function(){
+          element.next(element).find('input').val((element.val()).split('\\').pop());
+        });
+        $(this).find("button.btn-choose").click(function(){
+          element.click();
+        });
+        $(this).find("button.btn-reset").click(function(){
+          element.val(null);
+          $(this).parents(".input-file").find('input').val('');
+        });
+        $(this).find('input').css("cursor","pointer");
+        $(this).find('input').mousedown(function() {
+          $(this).parents('.input-file').prev().click();
+          return false;
+        });
+        return element;
+      }
+    }
+  );
+}
+$(function() {
+  bs_input_file();
+});</script>
+
+  </body>
+</html>

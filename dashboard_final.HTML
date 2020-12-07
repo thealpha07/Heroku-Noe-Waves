@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+  	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="/static/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/static/demo/demo.css" rel="stylesheet" />
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+  	  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+  	<style>
+  		
+  		body{
+		  margin: 0;
+		  padding: 0;
+		  font-family: "Roboto", sans-serif;
+		} 
+
+		header{
+		  position: fixed;
+		  background: #22242A;
+		  padding: 0px;
+		  width: 100%;
+		  height: 70px;
+		}
+
+		.container1{
+		  height: 250px;
+		  width: 1200px;
+		  margin: 0 auto;
+		  padding-top: 100px;
+		  background-color: #e6f7ff;
+		}
+
+		.container1 h3{
+		  color: #19B3D3;
+		  margin: 20px;
+		  text-transform: uppercase;
+		  text-align: center;
+		  font-size: 20px;
+		  font-weight: 800;
+
+		}
+
+		.container2{
+		  height: 1200px;
+		  width: 1200px;
+		  margin: 0 auto;
+		  background-color: pink;
+		}
+
+		.container2 h3{
+		  color: #19B3D3;
+		  margin: 20px;
+		  text-transform: uppercase;
+		  text-align: center;
+		  font-size: 20px;
+		  font-weight: 800;
+		}
+
+		.row {
+		  display: flex;
+		}
+
+		.column {
+		  flex: 33.33%;
+		  padding: 5px;
+		  border: 1px solid red;
+		  text-align: center;
+		}
+
+		table{
+		  width: 300px;
+		  color: #000;
+
+		}
+		td{
+		  text-align: center;
+		  color: #000;
+		}
+
+		table, th, td{
+		  border: 1px solid green;
+      text-align: center;
+		}
+
+		.left_area h3{
+		  color: #fff;
+      padding-left: 30px;
+		  margin: 0 auto;
+		  text-transform: uppercase;
+		  font-size: 22px;
+		  font-weight: 900;
+		}
+
+		.left_area span{
+		  color: #19B3D3;
+		}
+
+		.logout_btn{
+		  padding: 5px;
+		  background: #19B3D3;
+		  text-decoration: none;
+		  float: right;
+		  margin-top: -30px;
+		  margin-right: 40px;
+		  border-radius: 2px;
+		  font-size: 15px;
+		  font-weight: 600;
+		  color: #fff;
+		  transition: 0.5s;
+		  transition-property: background;
+		}
+
+		.logout_btn:hover{
+		  background: #0B87A6;
+		}
+
+		.sidebar {
+		  background: #2f323a;
+		  margin-top: 70px;
+		  padding-top: 30px;
+		  position: fixed;
+		  left: 0;
+		  width: 250px;
+		  height: 100%;
+		  transition: 0.5s;
+		  transition-property: left;
+		}
+
+		.sidebar h4{
+		  color: #ccc;
+		  margin-top: 0;
+		  margin-bottom: 20px;
+		}
+
+		.sidebar a{
+		  color: #fff;
+		  display: block;
+		  width: 100%;
+		  line-height: 60px;
+		  text-decoration: none;
+		  padding-left: 40px;
+		  box-sizing: border-box;
+		  transition: 0.5s;
+		  transition-property: background;
+		}
+
+		.sidebar a:hover{
+		  background: #19B3D3;
+		}
+
+		.sidebar i{
+		  padding-right: 10px;
+		}
+
+		label #sidebar_btn{
+		  z-index: 1;
+		  color: #fff;
+		  position: fixed;
+		  cursor: pointer;
+		  left: 300px;
+		  font-size: 20px;
+		  margin: 5px 0;
+		  transition: 0.5s;
+		  transition-property: color;
+		}
+
+		label #sidebar_btn:hover{
+		  color: #19B3D3;
+		}
+
+
+		.content{
+		  margin-left: 250px;
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		  height: 100vh;
+		  transition: 0.5s;
+		  padding-top: : 90px;
+		}
+
+    </style>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+
+    <header>
+      <label for="check">
+        
+      </label>
+      <div class="left_area">
+        <h3>NOE-<span>-WAVES</span></h3>
+      </div>
+  
+    </header>
+
+    <div class="sidebar">
+      <center>
+        <h4>{{name}}</h4>
+      </center>
+      <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    </div>
+ <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">new_releases</i>
+                  </div>
+                  <p class="card-category">Epileptic</p>
+                  <h3 class="card-title">{{NN_e}}/{{length}}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">airplay</i>
+                    The above wavelets are Dangerous. Need Immediate Care...!
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">insert_emoticon</i>
+                  </div>
+                  <p class="card-category">Healthy</p>
+                  <h3 class="card-title">{{NN_h}}/{{length}}
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">airplay</i>
+                    The wave signals are identified as healthy...!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+    	  <div class="col-lg-6 col-md-12">
+              <div class="card">
+
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>Wave</th>
+                      <!-- <th>Name</th> -->
+                      <th>Prediction</th>
+                      <th>Condition</th>
+                    </thead>
+                    <tbody>
+                      
+                      {%for i in NN%}
+                      <tr>
+                      <td>{{ loop.index }}</td>
+                      <td> {{ i }} </td>
+                      <td> {% if i==1 %}
+                      Epileptic
+                      {% endif %}
+                      {% if i==0 %}
+                      Healthy
+                      {% endif %} </td>
+                    </tr>
+                      {%  endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card card-chart">
+                <div class="card-header card-header-success">
+                  <!-- <div class="ct-chart" id="dailySalesChart"></div> -->
+                  <div class="ct-chart" id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                </div>
+              
+              </div>
+            </div>
+
+   <script >Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Result'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+          name: 'Healthy',
+          y: {{NN_h}},
+          selected: true
+        },{
+          name: 'Epileptic',
+          y: {{NN_e}}
+        },]
+    }]
+});</script>
+    
+
+  </body>
+</html>
+             
