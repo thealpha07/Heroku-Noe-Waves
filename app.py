@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 # import matplotlib.pyplot as plt
 # from time import sleep
-import pyeeg
 import pickle
 # import warnings
 from werkzeug.utils import secure_filename
